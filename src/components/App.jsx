@@ -104,6 +104,9 @@ export const App = () => {
     // });
 
     setContacts([...contacts, contact]);
+    if (contacts.length > 0) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+    }
   };
 
   // shouldComponentUpdate(nextProps, nextState) {
@@ -113,11 +116,11 @@ export const App = () => {
   //   return true;
   // }
 
-  useEffect(() => {
-    if (contacts.length > 0) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }, [contacts]);
+  // useEffect(() => {
+  //   if (contacts.length > 0) {
+  //     localStorage.setItem('contacts', JSON.stringify(contacts));
+  //   }
+  // }, [contacts]);
 
   // // componentDidMount() {
   // //   // if (localStorage.getItem('contacts') !== null) {
