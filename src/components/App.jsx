@@ -105,9 +105,9 @@ export const App = () => {
 
     setContacts([...contacts, contact]);
     //SECOND WAY
-    if (contacts.length > 0) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
+    // if (contacts.length > 0) {
+    //   localStorage.setItem('contacts', JSON.stringify(contacts));
+    // }
   };
 
   // shouldComponentUpdate(nextProps, nextState) {
@@ -119,11 +119,11 @@ export const App = () => {
 
 
   //FIRST WAY
-            // useEffect(() => {
-            //   if (contacts.length > 0) {
-            //     localStorage.setItem('contacts', JSON.stringify(contacts));
-            //   }
-            // }, [contacts]);
+            useEffect(() => {
+              if (contacts.length > 0) {
+                localStorage.setItem('contacts', JSON.stringify(contacts));
+              }
+            }, [contacts]);
 
   // // componentDidMount() {
   // //   // if (localStorage.getItem('contacts') !== null) {
